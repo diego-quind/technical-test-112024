@@ -20,3 +20,4 @@ class Pipeline:
         except Exception as e:
             execution.fail_execution(str(e))
             logger.log_error(f"Pipeline {self.pipeline_id} falló. Error: {str(e)}")
+        logger.save_to_file(self.pipeline_id)
